@@ -1,0 +1,321 @@
+> # ---------------------------------------------------------------------------
+> # IMPORT DATA AND SETUP
+> # ---------------------------------------------------------------------------
+> data <- read.csv("C:/Users/Yahya/Desktop/My folder/PROJECTS/R/LinearRegression/customer-data.csv")
+> str(data)
+'data.frame':	500 obs. of  8 variables:
+ $ Email               : chr  "mstephenson@fernandez.com" "hduke@hotmail.com" "pallen@yahoo.com" "riverarebecca@gmail.com" ...
+ $ Address             : chr  "835 Frank Tunnel\nWrightmouth, MI 82180-9605" "4547 Archer Common\nDiazchester, CA 06566-8576" "24645 Valerie Unions Suite 582\nCobbborough, DC 99414-7564" "1414 David Throughway\nPort Jason, OH 22070-1220" ...
+ $ Avatar              : chr  "Violet" "DarkGreen" "Bisque" "SaddleBrown" ...
+ $ Avg..Session.Length : num  34.5 31.9 33 34.3 33.3 ...
+ $ Time.on.App         : num  12.7 11.1 11.3 13.7 12.8 ...
+ $ Time.on.Website     : num  39.6 37.3 37.1 36.7 37.5 ...
+ $ Length.of.Membership: num  4.08 2.66 4.1 3.12 4.45 ...
+ $ Yearly.Amount.Spent : num  588 392 488 582 599 ...
+> summary(data)
+    Email             Address             Avatar          Avg..Session.Length  Time.on.App     Time.on.Website Length.of.Membership Yearly.Amount.Spent
+ Length:500         Length:500         Length:500         Min.   :29.53       Min.   : 8.508   Min.   :33.91   Min.   :0.2699       Min.   :256.7      
+ Class :character   Class :character   Class :character   1st Qu.:32.34       1st Qu.:11.388   1st Qu.:36.35   1st Qu.:2.9304       1st Qu.:445.0      
+ Mode  :character   Mode  :character   Mode  :character   Median :33.08       Median :11.983   Median :37.07   Median :3.5340       Median :498.9      
+                                                          Mean   :33.05       Mean   :12.052   Mean   :37.06   Mean   :3.5335       Mean   :499.3      
+                                                          3rd Qu.:33.71       3rd Qu.:12.754   3rd Qu.:37.72   3rd Qu.:4.1265       3rd Qu.:549.3      
+                                                          Max.   :36.14       Max.   :15.127   Max.   :40.01   Max.   :6.9227       Max.   :765.5      
+> # ---------------------------------------------------------------------------
+> # CREATE PLOTS AND SEARCH FOR CORRELATIONS
+> # ---------------------------------------------------------------------------
+> library(ggplot2)
+Need help getting started? Try the R Graphics Cookbook: https://r-graphics.org
+> # Is there a correlation between Time on Website & Yearly Amount Spent?
+> ggplot(data, aes(x=Time.on.Website, y=Yearly.Amount.Spent)) + 
++   geom_point(colour="orange") + 
++   ggtitle("Time on website against vs Yearly amount spent") + 
++   xlab("Time on Website") +
++   ylab("Yearly Amount Spent")
+> # Is there a correlation between Time on Website & Yearly Amount Spent?
+> ggplot(data, aes(x=Time.on.Website, y=Yearly.Amount.Spent)) + 
++   geom_point(colour="orange") + 
++   ggtitle("Time on website against vs Yearly amount spent") + 
++   xlab("Time on Website") +
++   ylab("Yearly Amount Spent")
+> # Is there a correlation between Time on Website & Yearly Amount Spent?
+> ggplot(data, aes(x=Time.on.Website, y=Yearly.Amount.Spent)) + 
++   geom_point(colour="orange") + 
++   ggtitle("Time on website against vs Yearly amount spent") + 
++   xlab("Time on Website") +
++   ylab("Yearly Amount Spent")
+> # Is there a correlation between Time on Website & Yearly Amount Spent?
+> ggplot(data, aes(x=Time.on.Website, y=Yearly.Amount.Spent)) + 
++   geom_point(colour="orange") + 
++   ggtitle("Time on website against vs Yearly amount spent") + 
++   xlab("Time on Website") +
++   ylab("Yearly Amount Spent")
+> # Is there a correlation between Time on Website & Yearly Amount Spent?
+> ggplot(data, aes(x=Time.on.Website, y=Yearly.Amount.Spent)) + 
++   geom_point(colour="orange") + 
++   ggtitle("Time on website against vs Yearly amount spent") + 
++   xlab("Time on Website") +
++   ylab("Yearly Amount Spent")
+> # Is there a correlation between Avg Session Length & Yearly Amount Spent?
+> ggplot(data, aes(x=Avg..Session.Length, y=Yearly.Amount.Spent)) + 
++   geom_point(colour="orange") +
++   ggtitle("Average session length against vs Yearly amount spent") + 
++   xlab("Time on Website") +
++   ylab("Yearly Amount Spent")
+> # Is there a correlation between Time on Website & Yearly Amount Spent?
+> ggplot(data, aes(x=Time.on.Website, y=Yearly.Amount.Spent)) + 
++   geom_point(colour="orange") + 
++   ggtitle("Time on website against vs Yearly amount spent") + 
++   xlab("Time on Website") +
++   ylab("Yearly Amount Spent")
+> # Is there a correlation between Avg Session Length & Yearly Amount Spent?
+> ggplot(data, aes(x=Avg..Session.Length, y=Yearly.Amount.Spent)) + 
++   geom_point(colour="orange") +
++   ggtitle("Average session length against vs Yearly amount spent") + 
++   xlab("Time on Website") +
++   ylab("Yearly Amount Spent")
+> # pairplot of all continuous variables --> 
+> #### length of membership seems the most correlated
+> pairs(data[c("Avg..Session.Length", 
++              "Time.on.App", 
++              "Time.on.Website", 
++              "Length.of.Membership",
++              "Yearly.Amount.Spent")],
++       col = "orange",
++       pch = 16,
++       labels = c("Avg Session Length", 
++                  "Time on App", 
++                  "Time on website",
++                  "Length of Membership",
++                  "Yearly spent"),
++       main = "Pairplot of variables")
+> # pairplot of all continuous variables --> 
+> #### length of membership seems the most correlated
+> pairs(data[c("Avg..Session.Length", 
++              "Time.on.App", 
++              "Time.on.Website", 
++              "Length.of.Membership",
++              "Yearly.Amount.Spent")],
++       col = "orange",
++       pch = 16,
++       labels = c("Avg Session Length", 
++                  "Time on App", 
++                  "Time on website",
++                  "Length of Membership",
++                  "Yearly spent"),
++       main = "Pairplot of variables")
+> # pairplot of all continuous variables --> 
+> #### length of membership seems the most correlated
+> pairs(data[c("Avg..Session.Length", 
++              "Time.on.App", 
++              "Time.on.Website", 
++              "Length.of.Membership",
++              "Yearly.Amount.Spent")],
++       col = "orange",
++       pch = 16,
++       labels = c("Avg Session Length", 
++                  "Time on App", 
++                  "Time on website",
++                  "Length of Membership",
++                  "Yearly spent"),
++       main = "Pairplot of variables")
+> # is the variable normally distributed?
+> hist(data$Length.of.Membership)
+> # with ggplot
+> ggplot(data, aes(x=Length.of.Membership)) + 
++   geom_histogram(
++     color= "white", 
++     fill="orange",
++     binwidth = 0.5)
+> # is the variable normally distributed?
+> hist(data$Length.of.Membership)
+> # with ggplot
+> ggplot(data, aes(x=Length.of.Membership)) + 
++   geom_histogram(
++     color= "white", 
++     fill="orange",
++     binwidth = 0.5)
+> # is the variable normally distributed?
+> hist(data$Length.of.Membership)
+> # with ggplot
+> ggplot(data, aes(x=Length.of.Membership)) + 
++   geom_histogram(
++     color= "white", 
++     fill="orange",
++     binwidth = 0.5)
+> # is the variable normally distributed?
+> hist(data$Length.of.Membership)
+> # with ggplot
+> ggplot(data, aes(x=Length.of.Membership)) + 
++   geom_histogram(
++     color= "white", 
++     fill="orange",
++     binwidth = 0.5)
+> # check distribution with boxplot
+> boxplot(data$Length.of.Membership)
+> # with ggplot
+> ggplot(data, aes(x=Length.of.Membership)) + 
++   geom_boxplot(
++     fill="orange",
++   )
+> # is the variable normally distributed?
+> hist(data$Length.of.Membership)
+> # with ggplot
+> ggplot(data, aes(x=Length.of.Membership)) + 
++   geom_histogram(
++     color= "white", 
++     fill="orange",
++     binwidth = 0.5)
+> # check distribution with boxplot
+> boxplot(data$Length.of.Membership)
+> # with ggplot
+> ggplot(data, aes(x=Length.of.Membership)) + 
++   geom_boxplot(
++     fill="orange",
++   )
+> attach(data)
+> lm.fit1 <- lm(Yearly.Amount.Spent~Length.of.Membership)
+> summary(lm.fit1)
+
+Call:
+lm(formula = Yearly.Amount.Spent ~ Length.of.Membership)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-125.975  -29.032   -0.494   33.033  147.777 
+
+Coefficients:
+                     Estimate Std. Error t value Pr(>|t|)    
+(Intercept)           272.400      7.675   35.49   <2e-16 ***
+Length.of.Membership   64.219      2.090   30.72   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 46.66 on 498 degrees of freedom
+Multiple R-squared:  0.6546,	Adjusted R-squared:  0.6539 
+F-statistic: 943.9 on 1 and 498 DF,  p-value: < 2.2e-16
+
+> plot(Yearly.Amount.Spent~Length.of.Membership)
+> abline(lm.fit1, col="red")
+> qqnorm(residuals(lm.fit1))
+> qqline(residuals(lm.fit1), col="red")
+> shapiro.test(residuals(lm.fit1))
+
+	Shapiro-Wilk normality test
+
+data:  residuals(lm.fit1)
+W = 0.99756, p-value = 0.6837
+
+> # create a random training and a testing set
+> set.seed(1)
+> row.number <- sample(1:nrow(data), 0.8*nrow(data))
+> train <- data[row.number,]
+> test <- data[-row.number,]
+> # estimate the linear fit with the training set
+> lm.fit0.8 <- lm(Yearly.Amount.Spent~Length.of.Membership, data=train)
+> summary(lm.fit0.8)
+
+Call:
+lm(formula = Yearly.Amount.Spent ~ Length.of.Membership, data = train)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-124.810  -29.274   -2.219   31.482  149.107 
+
+Coefficients:
+                     Estimate Std. Error t value Pr(>|t|)    
+(Intercept)           271.853      8.691   31.28   <2e-16 ***
+Length.of.Membership   64.073      2.355   27.21   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 47.14 on 398 degrees of freedom
+Multiple R-squared:  0.6503,	Adjusted R-squared:  0.6494 
+F-statistic: 740.2 on 1 and 398 DF,  p-value: < 2.2e-16
+
+> # predict on testing set
+> prediction0.8 <- predict(lm.fit0.8, newdata = test)
+> err0.8 <- prediction0.8 - test$Yearly.Amount.Spent
+> rmse <- sqrt(mean(err0.8^2))
+> mape <- mean(abs(err0.8/test$Yearly.Amount.Spent))
+> c(RMSE=rmse,mape=mape,R2=summary(lm.fit0.8)$r.squared) # to print the 3 parameters
+       RMSE        mape          R2 
+44.78105782  0.07692126  0.65032683 
+> # ---------------------------------------------------------------------------
+> # MULTIPLE REGRESSION
+> # ---------------------------------------------------------------------------
+> attach(data)
+The following objects are masked from data (pos = 3):
+
+    Address, Avatar, Avg..Session.Length, Email, Length.of.Membership, Time.on.App, Time.on.Website, Yearly.Amount.Spent
+
+> lm.fit <- lm(Yearly.Amount.Spent~Avg..Session.Length +
++                Time.on.App + 
++                Time.on.Website +
++                Length.of.Membership)
+> summary(lm.fit)
+
+Call:
+lm(formula = Yearly.Amount.Spent ~ Avg..Session.Length + Time.on.App + 
+    Time.on.Website + Length.of.Membership)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-30.4059  -6.2191  -0.1364   6.6048  30.3085 
+
+Coefficients:
+                       Estimate Std. Error t value Pr(>|t|)    
+(Intercept)          -1051.5943    22.9925 -45.736   <2e-16 ***
+Avg..Session.Length     25.7343     0.4510  57.057   <2e-16 ***
+Time.on.App             38.7092     0.4510  85.828   <2e-16 ***
+Time.on.Website          0.4367     0.4441   0.983    0.326    
+Length.of.Membership    61.5773     0.4483 137.346   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 9.973 on 495 degrees of freedom
+Multiple R-squared:  0.9843,	Adjusted R-squared:  0.9842 
+F-statistic:  7766 on 4 and 495 DF,  p-value: < 2.2e-16
+
+> # create a random training and a testing set
+> set.seed(1)
+> row.number <- sample(1:nrow(data), 0.8*nrow(data))
+> train <- data[row.number,]
+> test <- data[-row.number,]
+> # estimate the linear fit with the training set
+> multi.lm.fit0.8 <- lm(Yearly.Amount.Spent~Avg..Session.Length +
++                         Time.on.App + 
++                         Time.on.Website +
++                         Length.of.Membership, 
++                       data=train)
+> summary(multi.lm.fit0.8)
+
+Call:
+lm(formula = Yearly.Amount.Spent ~ Avg..Session.Length + Time.on.App + 
+    Time.on.Website + Length.of.Membership, data = train)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-30.042  -6.496  -0.084   6.960  30.045 
+
+Coefficients:
+                       Estimate Std. Error t value Pr(>|t|)    
+(Intercept)          -1044.3952    26.6175 -39.237   <2e-16 ***
+Avg..Session.Length     25.6921     0.5198  49.425   <2e-16 ***
+Time.on.App             38.9626     0.5171  75.354   <2e-16 ***
+Time.on.Website          0.2212     0.5065   0.437    0.663    
+Length.of.Membership    61.2990     0.5156 118.898   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 10.27 on 395 degrees of freedom
+Multiple R-squared:  0.9835,	Adjusted R-squared:  0.9834 
+F-statistic:  5897 on 4 and 395 DF,  p-value: < 2.2e-16
+
+> # predict on testing set
+> prediction.multi0.8 <- predict(multi.lm.fit0.8, newdata = test)
+> err0.8 <- prediction.multi0.8 - test$Yearly.Amount.Spent
+> rmse <- sqrt(mean(err0.8^2))
+> mape <- mean(abs(err0.8/test$Yearly.Amount.Spent))
+> c(RMSE=rmse,mape=mape,R2=summary(lm.fit0.8)$r.squared) # to print the 3 parameters
+      RMSE       mape         R2 
+8.76502797 0.01475183 0.65032683 
